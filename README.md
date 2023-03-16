@@ -1,1 +1,2 @@
-# Rejestracja_uslugi_lekarskie
+Rejestracja i zapisy na usługi medyczne
+Stworzone na potrzeby projektu
