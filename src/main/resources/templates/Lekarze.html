@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <title>Przychodnie NFZ | Nasi Lekarze</title>
+        <style>
+            body{
+                font-size:1.2em ;
+                margin: 0 0 0 0;
+                padding: 0 0 0 0;
+                font-family: 'Open Sans', sans-serif;
+            }
+            a{
+                text-decoration: none;
+                color: rgb(44, 35, 126);
+            }
+            #menu{
+                background-image: linear-gradient( rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.069));
+                padding-bottom: 20px;
+            }
+            #nav-logo{
+                width: 150px;
+                margin-top: 18px;
+                margin-left: 120px;
+            }
+            .nav{
+                list-style: none;
+                font-size: 21px;
+                font-weight: 700;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 90px;
+                float: right;
+                margin-top: 40px ;
+                margin-right: 100px;
+            }
+            #background{
+                background-image: url('https://wallpapercave.com/wp/wp3487924.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            h1{
+                margin-top: 40px;
+                text-align: center;
+            }
+            table{
+                background-image:linear-gradient(to right, rgba(0, 0, 255, 0.432), rgba(128, 0, 128, 0.456)) ;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                border-collapse: collapse;
+                text-align: center;
+                width: 75%;
+            }
+            footer{
+                background-color: rgb(44, 35, 126);
+                color: white;
+                text-align: center;
+                padding: 20px;
+                margin-top: 500px;
+            }
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+                text-align: center;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+
+        </style>
+    </head>
+<body>
+<div id="background">
+    <div id="jeden">
+        <header>
+            <div id="menu">
+                <a href="/"><img id="nav-logo" src="https://dentonet.pl/wp-content/uploads/2017/12/c88a77499430bb8c731aab2302a6d8bd-850x400.jpg" alt="logonfz"></a>
+                <ul class="nav">
+                    <li><a href="/placowki">Placówki</a></li>
+                    <li><a href="/lekarze">Lekarze</a></li>
+                    <li><a th:href="@{/Zalogowany}">Zaloguj</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <h1>Nasi lekarze</h1>
+<table>
+    <thead>
+    <tr>
+        <!--<th>Product ID</th> -->
+        <th>Stopien</th>
+        <th>Imię i Nazwisko</th>
+        <th>Specjalizacja</th>
+        <th>Placówka</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="doctors : ${Doctorslist}">
+        <!--<td th:text="${doctors.id}">Product ID</td>-->
+        <td th:text="${doctors.Stopien}"></td>
+        <td th:text="${doctors.Nazwa}"></td>
+        <td th:text="${doctors.Specjalizacja}"></td>
+        <td th:text="${doctors.Placowka}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+    <footer>
+        Wszelkie prawa ZASTRZEŻONE, Jakub Ostrowski, Mateusz Kawik, essa
+    </footer>
+    </div>
+</html>

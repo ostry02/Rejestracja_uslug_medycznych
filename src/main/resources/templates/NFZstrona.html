@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="https://www.thymeleaf.org" lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przychodnie NFZ | Zapisz się teraz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-size:1.2em ;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(44, 35, 126);
+        }
+        #menu{
+            background-image: linear-gradient( rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.069));
+            padding-bottom: 20px;
+        }
+        #nav-logo{
+            width: 150px;
+            margin-top: 18px;
+            margin-left: 120px;
+        }
+        .nav{
+            list-style: none;
+            font-size: 21px;
+            font-weight: 700;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 90px;
+            float: right;
+            margin-top: 40px ;
+            margin-right: 100px;
+        }
+        #background{
+            background-image: url('https://wallpapercave.com/wp/wp3487924.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1{
+            margin-left: 140px;
+        }
+        form{
+            font-size: 18px;
+            margin-left: 140px;
+            font-weight: 200;
+        }
+        input{
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        #button{
+            font-size: 40px;
+            margin-top: 10px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        footer{
+            background-color: rgb(44, 35, 126);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="background">
+    <div id="jeden">
+        <header>
+            <div id="menu">
+                <a href="/"><img id="nav-logo" src="https://dentonet.pl/wp-content/uploads/2017/12/c88a77499430bb8c731aab2302a6d8bd-850x400.jpg" alt="logonfz"></a>
+                <ul class="nav">
+                    <li><a href="/placowki">Placówki</a></li>
+                    <li><a href="/lekarze">Lekarze</a></li>
+                    <li><a th:href="@{/Zalogowany}">Zaloguj</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <div id="dwa">
+        <h1>Uzupełnij formularz</h1>
+        <form action="addUsers"  method="post" >
+            <label for="imie">Imię Pacjenta:</label> <br>
+            <input id="imie" class="name" type="text" name="Imie"> <br>
+            <label for="nazwisko">Nazwisko Pacjenta:</label> <br>
+            <input class="name" id="nazwisko" type="text" name="Nazwisko"> <br>
+            <label for="pesel">Pesel Pacjenta:</label> <br>
+            <input class="name" id="pesel" type="text" name="Pesel"> <br>
+            <label for="datauro">Data Urodzenia:</label> <br>
+            <input class="name" id="datauro" type="date" name="Datauro"><br>
+            <label for="ulica">Ulica Zamieszkania:</label> <br>
+            <input class="name" id="ulica" type="text" name="Ulica"> <br>
+            <label for="numerdomu">Numer Domu/Mieszkania:</label> <br>
+            <input class="name" id="numerdomu" type="text" name="NumerDomu"> <br>
+            <label for="miasto">Miasto:</label> <br>
+            <input class="name" id="miasto" type="text" name="Miasto"> <br>
+            <label for="datawizyty">Podaj datę wizyty:</label> <br>
+            <input class="name" id="datawizyty" type="datetime-local" name="Datawizyty"> <br>
+
+            <label for="placowka">W jakiej Placowce:</label> <br>
+            <select class="name" id="placowka" name="Placowka">
+                <option>---</option>
+                <option value="Aleja Karkonoska 23">Aleja Karkonoska 23</option>
+                <option value="Parafialna 1">Parafialna 1</option>
+                <option value="Grabiszynska 357">Grabiszynska 357</option>
+                <option value="Mazowiecka 15">Mazowiecka 15</option>
+            </select> <br>
+            <label for="specjalizacja">Jakiej specjalizaji lekarza potrzebujesz:</label> <br>
+            <select class="name" id="specjalizacja" name="Specjalizacja">
+                <option>---</option>
+                <option value="Chirurg">Chirurg</option>
+                <option value="Stomatolog">Stomatolog</option>
+                <option value="Ginekolog">Ginekolog</option>
+                <option value="Kardiolog">Kardiolog</option>
+                <option value="Laryngolog">Laryngolog</option>
+                <option value="Lekarz chorób wewnętrznych">Lekarz chorób wewnętrznych</option>
+                <option value="Okulista">Okulista</option>
+                <option value="Ortopeda">Ortopeda</option>
+                <option value="Pediatra">Pediatra</option>
+            </select> <br>
+            <label for="email">Email Pacjenta:</label> <br>
+            <input name="Email" id="email" class="name" type="text"> <br>
+            <input class="name" id="button" type="submit" value="Zatwierdź">
+        </form>
+        <div th:if="${param.error}">
+            Nieprawidłowo uzpełniony formularz
+        </div>
+    </div>
+</div>
+</body>
+<footer>
+    Wszelkie prawa ZASTRZEŻONE, Jakub Ostrowski, Mateusz Kawik
+</footer>
+</html>

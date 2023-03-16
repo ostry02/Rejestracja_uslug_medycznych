@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przychodnie NFZ | Zaloguj</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://dentonet.pl/wp-content/uploads/2017/12/c88a77499430bb8c731aab2302a6d8bd-850x400.jpg">
+    <style>
+        body{
+            font-size:1.2em ;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(44, 35, 126);
+        }
+        #menu{
+            background-image: linear-gradient( rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.069));
+            padding-bottom: 20px;
+        }
+        #nav-logo{
+            width: 150px;
+            margin-top: 18px;
+            margin-left: 120px;
+        }
+        .nav{
+            list-style: none;
+            font-size: 21px;
+            font-weight: 700;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 90px;
+            float: right;
+            margin-top: 40px ;
+            margin-right: 100px;
+        }
+        #background{
+            background-image: url('https://wallpapercave.com/wp/wp3487924.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            text-align: center;
+        }
+        footer{
+            background-color: rgb(44, 35, 126);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 500px;
+        }
+        .info{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="background">
+    <div id="jeden">
+        <header>
+            <div id="menu">
+                <a href="/"><img id="nav-logo" src="https://dentonet.pl/wp-content/uploads/2017/12/c88a77499430bb8c731aab2302a6d8bd-850x400.jpg" alt="logonfz"></a>
+                <ul class="nav">
+                    <li><a href="/placowki">Placówki</a></li>
+                    <li><a href="/lekarze">Lekarze</a></li>
+                    <li><a href="/Zaloguj">Zaloguj</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <h1>Zaloguj się lub <a href="/rejestracja">Zarejestruj się</a></h1>
+    <div class="info" th:if="${param.error}">
+        Zła nazwa użytkownika lub hasło.
+    </div>
+    <div class="info" th:if="${param.logout}">
+        Zostałeś wylogowany.
+    </div>
+<form th::action="@{/login}" method="post">
+    <label for="username">Email:</label> <br>
+    <input id="username" class="name" type="text" name="username"> <br>
+    <label for="password">Hasło:</label> <br>
+    <input class="name" id="password" type="password" name="password"> <br>
+
+    <input class="name" id="button" type="submit" value="Zatwierdź">
+
+
+
+</form>
+</body>
+<footer>
+    Wszelkie prawa ZASTRZEŻONE, Jakub Ostrowski, Mateusz Kawik, essa
+</footer>
+</div>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodanie lekarzy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-size:1.2em ;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(44, 35, 126);
+        }
+        #menu{
+            background-image: linear-gradient( rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.069));
+            padding-bottom: 20px;
+        }
+        #nav-logo{
+            width: 150px;
+            margin-top: 18px;
+            margin-left: 120px;
+        }
+        .nav{
+            list-style: none;
+            font-size: 21px;
+            font-weight: 700;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 90px;
+            float: right;
+            margin-top: 40px ;
+            margin-right: 100px;
+        }
+        #background{
+            background-image: url('https://wallpapercave.com/wp/wp3487924.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            text-align: center;
+        }
+        footer{
+            background-color: rgb(44, 35, 126);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 500px;
+        }
+        #wyloguj{
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 15px;
+            border: none;
+            color: rgb(44, 35, 126);
+        }
+    </style>
+</head>
+<body>
+<div id="background">
+    <div id="jeden">
+        <header>
+            <div id="menu">
+                <a href="/"><img id="nav-logo" src="https://dentonet.pl/wp-content/uploads/2017/12/c88a77499430bb8c731aab2302a6d8bd-850x400.jpg" alt="logonfz"></a>
+                <ul class="nav">
+                    <li><a href="/placowki">Placówki</a></li>
+                    <li><a href="/lekarze">Lekarze</a></li>
+                    <li><a href="/wizyty">Wizyty</a></li>
+                    <li><a href="/dodanie-lekarzy">Dodaj lekarzy</a></li>
+                    <li><li><form th:action="@{/logout}" method="post">
+                    <input id="wyloguj" type="submit" value="Wyloguj"/></form></li></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <h1>Dodaj Lekarza</h1>
+<form action="addDoctors" method="post">
+    <label for="nazwa">Imię i Nazwisko lekarza:</label><br>
+    <input id="nazwa" name="Nazwa"><br>
+    <label for="stopien">Stopień naukowy lekarza:</label><br>
+    <select id="stopien" name="Stopien">
+        <option>---</option>
+        <option value="lek. med.">lek. med.</option>
+        <option value="dr">dr</option>
+        <option value="dr hab.">dr hab.</option>
+        <option value="prof. dr hab.">prof. dr hab.</option>
+    </select><br>
+    <label for="specjalizacja">Jakiej specjalizaji lekarza potrzebujesz:</label> <br>
+    <select class="name" id="specjalizacja" name="Specjalizacja">
+        <option>---</option>
+        <option value="Chirurg">Chirurg</option>
+        <option value="Stomatolog">Stomatolog</option>
+        <option value="Ginekolog">Ginekolog</option>
+        <option value="Kardiolog">Kardiolog</option>
+        <option value="Laryngolog">Laryngolog</option>
+        <option value="Lekarz chorób wewnętrznych">Lekarz chorób wewnętrznych</option>
+        <option value="Okulista">Okulista</option>
+        <option value="Ortopeda">Ortopeda</option>
+        <option value="Pediatra">Pediatra</option>
+    </select> <br>
+    <label for="placowka">W jakiej Placówce pracuje:</label> <br>
+    <select class="name" id="placowka" name="Placowka">
+        <option>---</option>
+        <option value="Aleja Karkonoska 23">Aleja Karkonoska 23</option>
+        <option value="Parafialna 1">Parafialna 1</option>
+        <option value="Grabiszynska 357">Grabiszynska 357</option>
+        <option value="Mazowiecka 15">Mazowiecka 15</option>
+    </select> <br>
+    <input  type="submit" value="Zatwierdż">
+</form>
+</body>
+<footer>
+    Wszelkie prawa ZASTRZEŻONE, Jakub Ostrowski, Mateusz Kawik, essa
+</footer>
+</div>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Przychodnie NFZ | Nasze placówki</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <style>
+            body{
+                font-size:1.2em ;
+                margin: 0 0 0 0;
+                padding: 0 0 0 0;
+                font-family: 'Open Sans', sans-serif;
+            }
+            a{
+                text-decoration: none;
+                color: rgb(44, 35, 126);
+            }
+            #menu{
+                background-image: linear-gradient( rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.069));
+                padding-bottom: 20px;
+            }
+            #nav-logo{
+                width: 150px;
+                margin-top: 18px;
+                margin-left: 120px;
+            }
+            .nav{
+                list-style: none;
+                font-size: 21px;
+                font-weight: 700;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 90px;
+                float: right;
+                margin-top: 40px ;
+                margin-right: 100px;
+            }
+            #background{
+                background-image: url('https://wallpapercave.com/wp/wp3487924.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            h1{
+                margin-top: 40px;
+                text-align: center;
+            }
+            h3{
+                text-align: center;
+            }
+            footer{
+                background-color: rgb(44, 35, 126);
+                color: white;
+                text-align: center;
+                padding: 20px;
+                margin-top: 500px;
+            }
+        </style>
+    </head>
+<body>
+<div id="background">
+    <div id="jeden">
+        <header>
+            <div id="menu">
+                <a href="/"><img id="nav-logo" src="https://dentonet.pl/wp-content/uploads/2017/12/c88a77499430bb8c731aab2302a6d8bd-850x400.jpg" alt="logonfz"></a>
+                <ul class="nav">
+                    <li><a href="/placowki">Placówki</a></li>
+                    <li><a href="/lekarze">Lekarze</a></li>
+                    <li><a th:href="@{/Zalogowany}">Zaloguj</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <h1>Nasze placówki</h1>
+    <h3>Mazowiecka 15</h3>
+    <h3>Parafialna 1</h3>
+    <h3>Aleja Karkonoska 23</h3>
+    <h3>Grabiszynska 357</h3>
+
+    <p align="center"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d160255.4106076734!2d16.9918639!3d51.1270779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe9c2d4b58abf%3A0xb70956aec205e0f5!2zV3JvY8WCYXc!5e0!3m2!1spl!2spl!4v1671750440953!5m2!1spl!2spl" width="80%" height="400"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe></p>
+</body>
+    <footer>
+        Wszelkie prawa ZASTRZEŻONE, Jakub Ostrowski, Mateusz Kawik, essa
+    </footer>
+    </div>
+</html>
